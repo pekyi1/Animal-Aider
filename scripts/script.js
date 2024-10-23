@@ -140,3 +140,12 @@ volunteerImageInput.addEventListener('change', (event) => {
         'none';  // Hide the preview if no image is selected
   }
 });
+
+/*==================== toggle icon navbar ====================*/
+let menuIcon = document.querySelector('#menu-icon');
+let navbar = document.querySelector('.navbar');
+
+menuIcon.onclick = () => {
+  menuIcon.classList.toggle('bx-x');
+  navbar.classList.toggle('active');
+};

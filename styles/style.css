@@ -27,6 +27,7 @@ html {
 body {
     background: transparent;
     color: var(--main-color);
+    overflow-y: hidden;
 
 }
 
@@ -100,12 +101,17 @@ section {
     color: var(--main-color);
     transition: 0.2s ease;
 }
+
+.header-buttons>button:nth-of-type(2) {
+    display: none;
+}
+
 .header-buttons button:hover {
     background-color: var(--main-color);
     color: var(--text-color);
 }
 
-.header-buttons>button:nth-of-type(2) {
+.header-buttons>button:nth-of-type(3) {
     background: var(--main-color);
     color: #fff;
 }
@@ -255,6 +261,13 @@ section {
     width: 100%;
     height: 400px;
     border-radius: 30px;
+}
+
+.section2-banner.img {
+    background-image: url('images/section2-background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .section2-banner>div {
@@ -561,6 +574,7 @@ section {
     gap: 50px;
     margin-bottom: 60px;
 }
+
 /* start */
 .portfolio-container {
     display: grid;
@@ -635,6 +649,7 @@ section {
     font-size: 2rem;
     color: var(--second-bg-color);
 }
+
 /* end */
 
 .pet-images>div img {
@@ -712,11 +727,13 @@ section {
 .volunteer-button button:hover {
     box-shadow: 4px 4px 10px #002a4864;
 }
-footer{
-        padding: 7rem 9% 2rem;
+
+footer {
+    padding: 7rem 9% 2rem;
     background-color: #fceed5;
 }
-.reg-form{
+
+.reg-form {
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -725,13 +742,16 @@ footer{
     padding: 20px;
     border-radius: 13px;
 }
-.reg-form>div:first-of-type{
+
+.reg-form>div:first-of-type {
     width: 35%;
 }
-.reg-form>div:first-of-type p{
+
+.reg-form>div:first-of-type p {
     font-size: 17px;
 }
-.reg-form>div:nth-of-type(2){
+
+.reg-form>div:nth-of-type(2) {
     display: flex;
     flex-direction: row;
     padding: 12px;
@@ -739,21 +759,24 @@ footer{
     width: 65%;
     background-color: #F5F5F5;
 }
-.reg-form>div:nth-of-type(2) input{
+
+.reg-form>div:nth-of-type(2) input {
     padding: 5px 15px;
     width: 75%;
     border: 1px solid lightgray;
     border-radius: 10px;
     margin-right: 17px;
 }
-.reg-form>div:nth-of-type(2) button{
+
+.reg-form>div:nth-of-type(2) button {
     padding: 15px 20px;
     color: #F5F5F5;
     background-color: #003459;
     font-size: 12px;
     border-radius: 10px;
 }
-.socials{
+
+.socials {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -761,27 +784,32 @@ footer{
     border-bottom: 2px solid lightgray;
     padding: 30px 0;
 }
-.socials>div i{
+
+.socials>div i {
     font-size: 27px;
     margin-left: 23px;
 }
-.copyright-info{
+
+.copyright-info {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     padding: 20px 0;
 }
-.copyright-info p{
+
+.copyright-info p {
     color: #667479;
     font-size: 13.5px;
     cursor: pointer;
 }
+
 .copyright-info>div:nth-of-type(2) {
     display: flex;
     flex-direction: row;
 }
-.copyright-info>div:nth-of-type(2) p{
+
+.copyright-info>div:nth-of-type(2) p {
     margin-left: 10px;
 }
 
@@ -806,17 +834,19 @@ footer{
     width: 100%;
     height: 100%;
 }
-.edit-content>div{
+
+.edit-content>div {
     display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: start;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: start;
 }
 
 .edit-content img {
     width: 500px;
 }
-.edit-content p{
+
+.edit-content p {
     color: white;
     width: 400px;
     font-size: 20px;
@@ -939,4 +969,272 @@ footer{
 .back-to-home i {
     font-size: 2.4rem;
     color: var(--text-color);
+}
+
+@media (max-width:991px) {
+    .header {
+        padding: 2rem 3%;
+    }
+
+    section {
+        padding: 10rem 3% 2rem;
+    }
+
+    .services {
+        padding-bottom: 7rem;
+    }
+
+    .portfolio {
+        padding-bottom: 7rem;
+    }
+
+    .contact {
+        min-height: auto;
+    }
+
+    .footer {
+        padding: 2rem 3%;
+    }
+}
+
+@media (max-width:768px) {
+    section {
+        min-height: auto;
+    }
+
+    #menu-icon {
+        display: block;
+        color: var(--main-color);
+        order: 1;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 1rem 3%;
+        color: var(--main-color);
+        background: var(--text-color);
+        border-top: .1rem solid rgba(0, 0, 0, .2);
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
+        display: none;
+        animation: myAnim .5s ease 0s 1 normal forwards;
+    }
+
+    @keyframes myAnim {
+        0% {
+            opacity: 0;
+            transform: translateY(-250px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .logo {
+        order: 2;
+    }
+
+
+    .navbar.active {
+        display: block;
+    }
+
+    .navbar a {
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+    }
+
+    .header img {
+        width: 14rem;
+    }
+
+    .header-buttons {
+        width: auto;
+        order: 3;
+    }
+
+    .header-buttons>button:nth-of-type(3) {
+        display: none;
+    }
+
+    .home {
+        flex-direction: column;
+    }
+
+
+    .portfolio-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+
+    .pet-utilities {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 10px;
+    }
+
+    .volunteers-box {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .home-content {
+        padding: 20px 5px;
+    }
+
+    .home-content p {
+
+        width: auto;
+    }
+
+    .home-content h3 {
+        font-size: 32px;
+        text-wrap: nowrap;
+    }
+
+    .home-content h1 {
+        font-size: 30px;
+        width: auto;
+        line-height: 30px;
+    }
+
+    .section4-banner>div {
+        width: auto;
+    }
+
+    .section5-banner h3:first-of-type,
+    .section4-banner h3:first-of-type {
+        font-size: 25px;
+        text-wrap: wrap;
+    }
+
+    .header-buttons>button:nth-of-type(2) {
+        display: block;
+    }
+
+    .header-buttons>button:nth-of-type(1) {
+        display: none;
+    }
+
+    .header-buttons button {
+        padding: 8px 20px;
+    }
+
+    .section2-content .numberOf-box {
+        width: auto;
+    }
+
+    .numberOf-box h3 {
+        font-size: 30px;
+    }
+
+    .numberOf-box>p:first-of-type {
+        font-size: 14px;
+    }
+
+    .numberOf-box>p:nth-of-type(2) {
+        display: none;
+    }
+
+    .back-to-home {
+        right: 20px;
+    }
+
+    /* Container holding all the cards */
+    .section3-pets-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        /* Distribute space between cards */
+        gap: 20px;
+        /* Optional: Space between cards */
+        padding: 10px;
+    }
+
+    .section3-pets-grid>div {
+        width: calc(50% - 20px);
+        /* 2 cards per row on medium screens */
+        /* Scales the div and all its contents to 80% of the original size */
+        transform-origin: top left;
+        /* Defines the point from where the scaling happens */
+        transition: transform 0.3s ease;
+        /* Adds a smooth transition when scaling */
+    }
+
+    .section4-footer>* {
+        transform: scale(0.7);
+    }
+
+    .pet-utilities {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        /* Distribute space between cards */
+        gap: 20px;
+        /* Optional: Space between cards */
+        padding: 10px;
+    }
+
+    .pet-utilities>div {
+        width: calc(50% - 20px);
+        /* 2 cards per row on medium screens */
+        /* Scales the div and all its contents to 80% of the original size */
+        transform-origin: top left;
+        /* Defines the point from where the scaling happens */
+        transition: transform 0.3s ease;
+        /* Adds a smooth transition when scaling */
+    }
+
+    .reg-form {
+        padding: 5px;
+        flex-direction: column;
+    }
+
+    .reg-form>* {
+        transform: scale(0.8);
+    }
+
+    .reg-form>div:nth-of-type(2),
+    .reg-form>div:first-of-type {
+        width: 100%;
+    }
+
+    .edit-content>div {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .edit-content img {
+        width: 75%;
+    }
+
+    .edit-content p {
+        width: auto;
+        font-size: 15px;
+    }
+        .volunteer-modal-content {
+            width: 90%;
+        }
+
+.volunteer-modal form input{
+    width: 100%;
+}
+
+
+}
+
+@media (max-width:768px) {
+    .section2-banner {
+        background-image: url('images/section2-banner\(mobile\).png');
+    }
 }
