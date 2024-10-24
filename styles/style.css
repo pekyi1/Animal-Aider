@@ -1230,6 +1230,9 @@ footer {
 .volunteer-modal form input{
     width: 100%;
 }
+.volunteer-button {
+    flex-direction: column;
+}
 
 
 }
