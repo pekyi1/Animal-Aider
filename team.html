@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/team.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Meet the team</title>
+</head>
+
+<body>
+    <!-- Volunteer Modal -->
+    <div class="volunteer-modal" id="volunteerModal" style="display: none;">
+        <div class="volunteer-modal-content">
+            <span class="close-modal" id="closeVolunteerModal">&times;</span>
+            <h2>Volunteer Signup</h2>
+            <form id="volunteerForm">
+                <div class="form-content">
+                    <div class="form-fields">
+                        <label for="volunteerName">Name:</label>
+                        <input type="text" id="volunteerName" name="volunteerName" required>
+
+                        <label for="volunteerPhone">Phone Number:</label>
+                        <input type="tel" id="volunteerPhone" name="volunteerPhone" required>
+
+                        <label for="volunteerImage">Upload Image:</label>
+                        <input type="file" id="volunteerImage" name="volunteerImage" accept="image/*" required>
+                    </div>
+                    <!-- Image preview section -->
+                    <div class="image-preview">
+                        <img id="imagePreview" src="" alt="Image Preview" style="display: none;">
+                    </div>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+    <header class="header">
+        <a href="#" class="logo"><img src="images/logo.png"></a>
+
+        <i class='bx bx-menu' id="menu-icon"></i>
+
+        <nav class="navbar">
+            <a href="index.html" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <div class="header-buttons">
+            <button id="volunteerBtn1">Join as a Volunteer</button>
+            <button id="volunteerBtn2">Join</button>
+            <button>Support Us</button>
+        </div>
+    </header>
+    <section class="team-section">
+        <h1>OUR TEAM</h1>
+        <div class="team-members">
+            <div><img src="images/team-members/member 1.jpg" alt=""></div>
+            <div><img src="images/team-members/member 2.jpg" alt=""></div>
+            <div><img src="images/team-members/member 3.jpg" alt=""></div>
+            <div><img src="images/team-members/member 4.jpg" alt=""></div>
+            <div><img src="images/team-members/member 5.jpg" alt=""></div>
+            <div><img src="images/team-members/member 6.jpg" alt=""></div>
+        </div>
+
+    </section>
+    <script src="scripts/script-mobile.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+.team-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.team-section h1{
+text-align: center;
+font-size: 35px;
+}
+.team-members{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100%;
+}
+.team-members div {
+    flex: 1 1 30%;
+    margin: 10px;
+}
+.team-members div img{
+    width: 100%;
+}
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+    .team-section{
+        padding-top: 30px !important;
+    }
+    .team-members div {
+        flex: 1 1 100%;
+    }
+}
