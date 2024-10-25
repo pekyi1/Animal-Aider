@@ -7,11 +7,20 @@
     <link rel="stylesheet" href="styles/style.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src="https://unpkg.com/scrollreveal"></script>
-
     <title>Document</title>
 </head>
 
 <body>
+    <!-- video modal -->
+    <div id="videoModal" class="video-modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <video id="introVideo" controls>
+                <source src="path-to-your-video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
     <!-- Volunteer Modal -->
     <div class="volunteer-modal" id="volunteerModal" style="display: none;">
         <div class="volunteer-modal-content">
@@ -45,7 +54,7 @@
 
         <nav class="navbar">
             <a href="#home" class="active">Home</a>
-            <a href="#about">About</a>
+            <a href="about.html">About</a>
             <a href="#contact">Contact</a>
         </nav>
         <div class="header-buttons">
@@ -56,10 +65,11 @@
     </header>
     <section class="section1" id="home">
         <div class="overlay"></div> <!-- Add an overlay for better text visibility -->
-        <div class="home-content">
-            <h3>Every animal deserves</h3>
+        <div class="home-content load-hidden">
+            <h3 class="load-hidden">Every animal deserves</h3>
             <h1>Affection and shouldn't have to go without access to veterinary care.</h1>
-            <p>Most people are unaware of how their animals' health affects them. We're here to fix that. We visit
+            <p class="load-hidden">Most people are unaware of how their animals' health affects them. We're here to fix
+                that. We visit
                 communities in
                 Ghana, provide no-cost animal vaccinations and veterinary services as well as public health education to
                 fight disease. By doing this, we strengthen the relationship between people and animals and promote the
@@ -209,7 +219,7 @@
     </section>
     <section class="section5">
         <div class="pet-utilities">
-            <div>
+            <div class="load-hidden">
                 <img src="images/utility-image1.png" alt="">
                 <p>To reduce animal Borne Diseases</p>
                 <p>Product: Dog food &#xb7 Size: 385g</p>
@@ -248,7 +258,7 @@
                     </p>
                 </div>
             </div>
-            <div>
+            <div class="load-hidden">
                 <img src="images/utility-image2.png" alt="">
                 <p>To reduce animal Borne Diseases</p>
                 <p>Product: Dog food &#xb7 Size: 385g</p>
@@ -287,7 +297,7 @@
                     </p>
                 </div>
             </div>
-            <div>
+            <div class="load-hidden">
                 <img src="images/utility-image3.png" alt="">
                 <p>To reduce animal Borne Diseases</p>
                 <p>Product: Dog food &#xb7 Size: 385g</p>
@@ -374,28 +384,28 @@
             <p>volunteers</p>
         </div>
         <div class="volunteers-box">
-            <div>
+            <div class="load-hidden">
                 <div><img src="images/people/IMG_20240725_095504_326.jpg" alt=""></div>
                 <div>
                     <p>Emmanuel</p>
                     <p>Boateng</p>
                 </div>
             </div>
-            <div>
+            <div class="load-hidden">
                 <div><img src="images/people/IMG_20240725_095611_788.jpg" alt=""></div>
                 <div>
                     <p>Emmanuel</p>
                     <p>Boateng</p>
                 </div>
             </div>
-            <div>
+            <div class="load-hidden">
                 <div><img src="images/people/IMG_20240725_095606_642.jpg" alt=""></div>
                 <div>
                     <p>Emmanuel</p>
                     <p>Boateng</p>
                 </div>
             </div>
-            <div>
+            <div class="load-hidden">
                 <div><img src="images/people/IMG_20240725_095504_326.jpg" alt=""></div>
                 <div>
                     <p>Emmanuel</p>
@@ -406,6 +416,20 @@
         <div class="volunteer-button">
             <button id="volunteerBtn3">JOIN AS A VOLUNTEER &#128155;</button>
             <button id="meet-the-team">MEET THE TEAM👨‍👩‍👧‍👦</button>
+        </div>
+    </section>
+    <section class="section7">
+        <h1>VOLUNTEER TESTIMONIALS</h1>
+        <div class="volunteer-testimonials load-hidden">
+            <div><img src="images/volunteer testimonials/testimonial 1.jpg" alt=""></div>
+            <div><img src="images/volunteer testimonials/testimonial 2.jpg" alt=""></div>
+            <div><img src="images/volunteer testimonials/testimonial 3.jpg" alt=""></div>
+            <div><img src="images/volunteer testimonials/testimonial 4.jpg" alt=""></div>
+            <div><img src="images/volunteer testimonials/testimonial 5.jpg" alt=""></div>
+            <div><img src="images/volunteer testimonials/testimonial 6.jpg" alt=""></div>
+        </div>
+        <div class="testimonial-buttons">
+            <button>View more <span>></span></button>
         </div>
     </section>
     <footer>
@@ -463,8 +487,11 @@
     <a href="#home" class="back-to-home"><i class='bx bx-up-arrow-alt'></i></a>
     <script src="scripts/script.js"></script>
     <script>
-         document.getElementById("meet-the-team").addEventListener("click", function () {
-                window.location.href = "team.html";
+        document.getElementById("meet-the-team").addEventListener("click", function () {
+            window.location.href = "team.html";
+        });
+         document.querySelector(".testimonial-buttons button").addEventListener("click", function () {
+                window.location.href = "testimonials.html";
             });
     </script>
 

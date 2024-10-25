@@ -36,16 +36,23 @@ menuIcon.onclick = () => {
   menuIcon.classList.toggle('bx-x');
   navbar.classList.toggle('active');
 };
+
+
+
+
 ScrollReveal({
   // reset: true,
   distance: '80px',
-  duration: 2000,
+  duration: 1500,
   delay: 200
 });
 
-ScrollReveal().reveal('.home-content', {origin: 'top'});
 ScrollReveal().reveal(
-    '.home-img, .team-members, .volunteers-box div, .contact form',
-    {origin: 'bottom'});
-ScrollReveal().reveal('.home-content h1, .about-img', {origin: 'left'});
+    '.home-content, .section3-header, .team-section h1', {origin: 'top'});
+ScrollReveal().reveal('.home-img, .team-members div, .volunteers-box div, .section3-pets-grid',{origin: 'bottom'});
+ScrollReveal().reveal(
+    '.home-content h1,.home-content h3, .about-img', {origin: 'left'});
 ScrollReveal().reveal('.home-content p, .about-content', {origin: 'right'});
+ScrollReveal().reveal(
+    '.team-members>div, .section3-pets-grid>div, .pet-utilities div, .volunteer-testimonials>div',
+    {interval: 200});

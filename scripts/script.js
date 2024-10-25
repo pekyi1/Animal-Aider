@@ -187,6 +187,36 @@ window.onscroll = () => {
   navbar.classList.remove('active');
 };
 
+
+
+// // Video script
+// const viewIntroBtn = document.getElementById('viewIntroBtn');
+// const videoModal = document.getElementById('videoModal');
+// const closeBtn = document.querySelector('.video-modal .close');
+// const introVideo = document.getElementById('introVideo');
+
+// // Open modal and play video
+// viewIntroBtn.addEventListener('click', () => {
+//   videoModal.style.display = 'block';
+//   introVideo.play();
+// });
+
+// // Close modal and stop video
+// closeBtn.addEventListener('click', () => {
+//   videoModal.style.display = 'none';
+//   introVideo.pause();
+//   introVideo.currentTime = 0;
+// });
+
+// // Close modal when clicking outside the modal content
+// window.addEventListener('click', (event) => {
+//   if (event.target === videoModal) {
+//     videoModal.style.display = 'none';
+//     introVideo.pause();
+//     introVideo.currentTime = 0;
+//   }
+// });
+
 /*==================== scroll reveal ====================*/
 ScrollReveal({
   // reset: true,
@@ -195,9 +225,14 @@ ScrollReveal({
   delay: 200
 });
 
-ScrollReveal().reveal('.home-content', {origin: 'top'});
 ScrollReveal().reveal(
-    '.home-img, .services-container, .volunteers-box div, .contact form',
-    {origin: 'bottom'});
-ScrollReveal().reveal('.home-content h1, .about-img', {origin: 'left'});
-ScrollReveal().reveal('.home-content p, .about-content', {origin: 'right'});
+    '.home-content, .section3-header, .team-section h1, .portfolio-container, .section7 h1',
+    {origin: 'top'});
+ScrollReveal().reveal(
+    '.home-img, .team-members div, .volunteers-box div, .section3-pets-grid>div, .pet-utilities div, .volunteer-testimonials>div',
+    {origin: 'bottom'}, {interval: 200});
+ScrollReveal().reveal(
+    '.home-content h1, .about-img', {origin: 'left'});
+ScrollReveal().reveal(
+    '.home-content p,.home-content h3, .about-content', {origin: 'right'});
+ScrollReveal().reveal('.team-members>div, .section3-pets-grid>div, .pet-utilities div, .volunteer-testimonials>div', {interval: 200});
