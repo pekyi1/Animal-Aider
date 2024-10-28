@@ -11,12 +11,12 @@
 </head>
 
 <body>
-    <!-- video modal -->
+    <!-- Modal Structure -->
     <div id="videoModal" class="video-modal">
         <div class="modal-content">
             <span class="close">&times;</span>
             <video id="introVideo" controls>
-                <source src="path-to-your-video.mp4" type="video/mp4">
+                <source src="videos/The Animal Aider Project.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
         </div>
@@ -76,7 +76,7 @@
                 welfare of
                 animals.</p>
             <div class="home-buttons">
-                <button><span>View Intro<i class='bx bx-play-circle'></i></span></button>
+                <button id="viewIntroBtn1"><span>View Intro<i class='bx bx-play-circle'></i></span></button>
                 <button>Explore Now</button>
             </div>
         </div>
@@ -106,7 +106,6 @@
         </div>
         <div class="section2-banner" style="
         background-image: url('images/section2-background.png'); 
-        background-size: cover;
         background-position: center;
         background-repeat: no-repeat;">
             <div>
@@ -115,7 +114,7 @@
                     quality of animal life
                     and the special bond between humans and animals.</p>
                 <div class="home-buttons">
-                    <button><span>View Intro<i class='bx bx-play-circle'></i></span></button>
+                    <button id="viewIntroBtn2"><span>View Intro<i class='bx bx-play-circle'></i></span></button>
                     <button>Explore Now</button>
                 </div>
             </div>
@@ -485,14 +484,15 @@
         </section>
     </div>
     <a href="#home" class="back-to-home"><i class='bx bx-up-arrow-alt'></i></a>
+    <script src="scripts/video-script.js"></script>
     <script src="scripts/script.js"></script>
     <script>
         document.getElementById("meet-the-team").addEventListener("click", function () {
             window.location.href = "team.html";
         });
-         document.querySelector(".testimonial-buttons button").addEventListener("click", function () {
-                window.location.href = "testimonials.html";
-            });
+        document.querySelector(".testimonial-buttons button").addEventListener("click", function () {
+            window.location.href = "testimonials.html";
+        });
     </script>
 
 

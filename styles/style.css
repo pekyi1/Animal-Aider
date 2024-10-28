@@ -920,6 +920,35 @@ footer {
     width: 700px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     position: relative;
+    -webkit-animation: tilt-in-top-1 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+        animation: tilt-in-top-1 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+@-webkit-keyframes tilt-in-top-1 {
+    0% {
+        -webkit-transform: rotateY(30deg) translateY(-300px) skewY(-30deg);
+        transform: rotateY(30deg) translateY(-300px) skewY(-30deg);
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-transform: rotateY(0deg) translateY(0) skewY(0deg);
+        transform: rotateY(0deg) translateY(0) skewY(0deg);
+        opacity: 1;
+    }
+}
+
+@keyframes tilt-in-top-1 {
+    0% {
+        -webkit-transform: rotateY(30deg) translateY(-300px) skewY(-30deg);
+        transform: rotateY(30deg) translateY(-300px) skewY(-30deg);
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-transform: rotateY(0deg) translateY(0) skewY(0deg);
+        transform: rotateY(0deg) translateY(0) skewY(0deg);
+        opacity: 1;
+    }
 }
 
 .close-modal {
@@ -1046,9 +1075,12 @@ footer {
 .video-modal .modal-content {
     position: relative;
     margin: 10% auto;
-    padding: 20px;
-    width: 80%;
-    max-width: 600px;
+    padding: 0;
+    width: 55%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     background-color: white;
     border-radius: 8px;
 }
@@ -1058,8 +1090,21 @@ footer {
     position: absolute;
     top: 10px;
     right: 20px;
-    font-size: 24px;
+    font-size: 32px;
+    z-index: 2000;
+    color: white;
+    font-weight: 600;
     cursor: pointer;
+    text-shadow:
+            -1px -1px 0 black,
+            1px -1px 0 black,
+            -1px 1px 0 black,
+            1px 1px 0 black;
+}
+.video-modal video {
+    width: 100%;
+    border-radius: 8px;
+    object-fit: cover;
 }
 
 @media (max-width:991px) {
@@ -1318,7 +1363,10 @@ footer {
     .volunteer-testimonials div {
         flex: 1 1 100%;
     }
-
+        .video-modal .modal-content{
+            margin: 50% auto;
+            width: 90%;
+        }
 
 }
 
