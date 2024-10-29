@@ -415,12 +415,11 @@ section {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    text-wrap: nowrap;
     margin-top: 50px;
 }
 
 .section4-footer>div:first-of-type {
-    width: 150px;
+    width: 30%;
 }
 
 .section4-footer>div:first-of-type>p:first-of-type {
@@ -607,6 +606,7 @@ section {
 
 .volunteer-testimonials div img {
     width: 100%;
+    border-radius: 10px;
 }
 
 /* start */
@@ -1418,6 +1418,9 @@ footer {
     .badges>img:first-of-type {
         width: 130px;
     }
+        .section4-footer>div:first-of-type {
+            width: 50%;
+        }
 
 }
 
