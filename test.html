@@ -1,93 +1,265 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Testimonials</title>
     <style>
-        /* Modal background */
-.video-modal {
-    display: none; /* Hidden by default */
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
-}
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100%;
+            margin: 0;
+            background-color: #f8f8f8;
+        }
 
-/* Modal content */
-.modal-content {
-    position: relative;
-    margin: 10% auto;
-    padding: 20px;
-    width: 80%;
-    max-width: 600px;
-    background-color: white;
-    border-radius: 8px;
-}
-.modal-content video{
-    width: 200px;
-}
+        .testimonials {
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            width: 80%;
+        }
 
-/* Close button */
-.close {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    font-size: 24px;
-    cursor: pointer;
-}
+        .testimonial-title {
+            flex: 1;
+            padding-right: 50px;
+        }
 
+        .testimonial-title h4 {
+            color: #007bff;
+            font-weight: bold;
+            margin: 0;
+            text-transform: uppercase;
+            font-size: 18px;
+        }
+
+        .testimonial-title h2 {
+            color: #333;
+            font-weight: bold;
+            margin: 10px 0;
+            font-size: 45px;
+            line-height: 1.2;
+        }
+
+        .dots {
+            display: flex;
+            gap: 10px;
+            margin-top: 50px;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            background-color: #ddd;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .dot.active {
+            background-color: #007bff;
+        }
+
+        .testimonial-container {
+            flex: 2;
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            height: 250px;
+            margin-top: 20px;
+            margin-right: 50px;
+        }
+
+        .testimonial-content {
+            position: absolute;
+            width: 100%;
+            height: 250px;
+            top: 0;
+            left: 0;
+            background: #fff;
+            padding: 12px 20px;
+            border-radius: 10px;
+            box-shadow: 4px 8px 20px rgba(0, 0, 0, 0.05);
+            opacity: 0;
+            transform: translateY(50px) translateX(50px);
+            z-index: 0;
+            transition: transform 0.5s ease, opacity 0.5s ease;
+        }
+
+        .testimonial-content.active {
+            opacity: 1;
+            transform: translateY(0) translateX(0);
+            z-index: 1;
+        }
+
+        .testimonial-content.exiting {
+            opacity: 0;
+            transform: translateY(-50px) translateX(-50px);
+            z-index: 0;
+        }
+
+        .testimonial-image {
+            position: absolute;
+            top: -15px;
+            left: -15px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .testimonial-text {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            margin-left: 40px;
+        }
+
+        .testimonial-text p {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.6;
+            margin: 0 0 15px 0;
+        }
+
+        .testimonial-text h4 {
+            font-size: 18px;
+            color: #007bff;
+            margin: 0;
+        }
+
+        .testimonial-text span {
+            font-size: 14px;
+            color: #999;
+        }
+
+        .arrows {
+            position: absolute;
+            right: -50px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .arrow {
+            background-color: transparent;
+            border: none;
+            font-size: 35px;
+            color: #007bff;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .arrow:hover {
+            color: #0056b3;
+        }
     </style>
 </head>
+
 <body>
-    <div class="home-buttons">
-        <button id="viewIntroBtn"><span>View Intro <i class='bx bx-play-circle'></i></span></button>
-        <button>Explore Now</button>
-    </div>
-    
-    <!-- Modal Structure -->
-    <div id="videoModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <video id="introVideo" controls>
-                <source src="videos/The Animal Aider Project.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+    <section class="testimonials">
+        <div class="testimonial-title">
+            <h4>TESTIMONIALS</h4>
+            <h2>What People Say About Us.</h2>
+
+            <div class="dots" id="dots-container"></div>
         </div>
-    </div>
+
+        <div class="testimonial-container" id="testimonial-container">
+            <div class="testimonial-content active">
+                <img src="https://via.placeholder.com/50" alt="User Image" class="testimonial-image">
+                <div class="testimonial-text">
+                    <p>"IonApp has truly revolutionized the way we manage our laundry business at City Laundry."</p>
+                    <h4>Emmanuel Djokoto,</h4>
+                    <span>CEO of City Laundry</span>
+                </div>
+            </div>
+
+            <div class="testimonial-content">
+                <img src="https://via.placeholder.com/50" alt="User Image" class="testimonial-image">
+                <div class="testimonial-text">
+                    <p>"Red Button has transformed our business with its innovative technology."</p>
+                    <h4>Chris Thomas,</h4>
+                    <span>CEO of Red Button</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="arrows">
+            <button class="arrow up" onclick="prevTestimonial()">&#9650;</button>
+            <button class="arrow down" onclick="nextTestimonial()">&#9660;</button>
+        </div>
+    </section>
 
     <script>
-        // Get elements
-            const viewIntroBtn = document.getElementById('viewIntroBtn');
-            const videoModal = document.getElementById('videoModal');
-            const closeBtn = document.querySelector('.modal .close');
-            const introVideo = document.getElementById('introVideo');
+        let currentTestimonial = 0;
+        let isTransitioning = false;
 
-            // Open modal and play video
-            viewIntroBtn.addEventListener('click', () => {
-                videoModal.style.display = 'block';
-                introVideo.play();
+        function generateDots() {
+            const dotsContainer = document.getElementById('dots-container');
+            const testimonials = document.querySelectorAll('.testimonial-content');
+            dotsContainer.innerHTML = '';
+
+            testimonials.forEach((_, idx) => {
+                const dot = document.createElement('div');
+                dot.classList.add('dot');
+                if (idx === 0) dot.classList.add('active');
+                dot.addEventListener('click', () => goToTestimonial(idx));
+                dotsContainer.appendChild(dot);
             });
+        }
 
-            // Close modal and stop video
-            closeBtn.addEventListener('click', () => {
-                videoModal.style.display = 'none';
-                introVideo.pause();
-                introVideo.currentTime = 0;
-            });
+        function updateTestimonials(next) {
+            if (isTransitioning) return;
+            isTransitioning = true;
 
-            // Close modal when clicking outside the modal content
-            window.addEventListener('click', (event) => {
-                if (event.target === videoModal) {
-                    videoModal.style.display = 'none';
-                    introVideo.pause();
-                    introVideo.currentTime = 0;
-                }
-            });
+            const testimonials = document.querySelectorAll('.testimonial-content');
+            const dots = document.querySelectorAll('.dot');
 
+            const current = testimonials[currentTestimonial];
+            current.classList.add('exiting');
+
+            current.addEventListener('transitionend', () => {
+                current.classList.remove('active', 'exiting');
+                isTransitioning = false;
+            }, { once: true });
+
+            currentTestimonial = next;
+            const nextTestimonial = testimonials[currentTestimonial];
+            nextTestimonial.classList.add('active');
+
+            dots.forEach(dot => dot.classList.remove('active'));
+            dots[currentTestimonial].classList.add('active');
+        }
+
+        function nextTestimonial() {
+            const testimonials = document.querySelectorAll('.testimonial-content');
+            const next = (currentTestimonial + 1) % testimonials.length;
+            updateTestimonials(next);
+        }
+
+        function prevTestimonial() {
+            const testimonials = document.querySelectorAll('.testimonial-content');
+            const prev = (currentTestimonial - 1 + testimonials.length) % testimonials.length;
+            updateTestimonials(prev);
+        }
+
+        function goToTestimonial(index) {
+            updateTestimonials(index);
+        }
+
+        generateDots();
     </script>
 </body>
+
 </html>
